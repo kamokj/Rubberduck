@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Controls;
+using Rubberduck.UI.Command;
 
 namespace Rubberduck.UI.RegexAssistant
 {
@@ -11,6 +12,15 @@ namespace Rubberduck.UI.RegexAssistant
         public RegexAssistantViewModel()
         {
             _pattern = string.Empty;
+            RecalculateDescription();
+        }
+
+        public RegexAssistantViewModel(RegexWithOption regex)
+        {
+            _pattern = regex.Pattern ?? string.Empty;
+            _globalFlag = regex.GlobalFlag ?? false;
+            _ignoreCaseFlag = regex.IgnoreCaseFlag ?? false;
+
             RecalculateDescription();
         }
 
@@ -56,6 +66,7 @@ namespace Rubberduck.UI.RegexAssistant
         private string _pattern;
 
         private List<TreeViewItem> _resultItems;
+
         public List<TreeViewItem> ResultItems
         {
             get

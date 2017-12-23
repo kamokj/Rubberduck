@@ -326,7 +326,8 @@ namespace Rubberduck.Root
                 typeof(SmartIndenterParentMenu),
                 typeof(FindSymbolCommandMenuItem),
                 typeof(FindAllReferencesCommandMenuItem),
-                typeof(FindAllImplementationsCommandMenuItem)
+                typeof(FindAllImplementationsCommandMenuItem),
+                typeof(RegexAssistantWithSelectionCommandMenuItem),
             };
         }
 

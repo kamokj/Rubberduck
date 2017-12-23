@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using Rubberduck.UI.Command;
 
 namespace Rubberduck.UI.RegexAssistant
 {
@@ -11,7 +12,14 @@ namespace Rubberduck.UI.RegexAssistant
             ViewModel = new RegexAssistantViewModel();
         }
 
+        public RegexAssistantDialog(RegexWithOption regex)
+        {
+            InitializeComponent();
+            ViewModel = new RegexAssistantViewModel(regex);
+        }
+
         private RegexAssistantViewModel _viewModel;
+
         private RegexAssistantViewModel ViewModel { get { return _viewModel; }
         set
             {
